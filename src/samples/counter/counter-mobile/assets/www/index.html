@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" id="viewport" content="user-scalable=no, width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>DataOnOff Counter Sample</title>
+<link rel="stylesheet" href="master.css" type="text/css" media="screen"
+	title="no title">
+<script type="text/javascript" charset="utf-8" src="cordova-1.7.0rc1.js"></script>
+<script type="text/javascript" charset="utf-8" src="dataonoff.js"></script>
+<script type="text/javascript" charset="utf-8" src="main.js"></script>
+
+<script type="text/javascript">
+	// With this code the onDeviceReady is fired
+
+	window.onload = function() {
+		if (!window.device) {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+
+		if (navigator.userAgent.match(/ qt\/4.8/i)) {
+			(function() {
+				var contentsWidth = document.getElementById("stage").offsetWidth;
+				var contentsHeight = document.getElementById("stage").offsetHeight;
+				window.zoomToFit = function () {
+					
+					var bodyWidth = window.innerWidth;
+					var zoomW = (bodyWidth / contentsWidth) * 0.95;
+					//console.debug("W: " + bodyWidth + " / " + contentsWidth + " = " + zoomW);
+	
+					var bodyHeight = window.innerHeight;
+					var zoomH = (bodyHeight / contentsHeight) * 0.95;
+					//console.debug("H: " + bodyHeight + " / " + contentsHeight + " = " + zoomH);
+	
+					document.body.style.zoom = Math.min(zoomW, zoomH);
+				}
+
+				document.addEventListener("deviceready", window.zoomToFit, false);
+				window.onresize = function(event) {
+					zoomToFit();
+				}
+			})();
+		}
+	}
+</script>
+</head>
+<body>
+<div id="stage" class="theme">
+	<h1>DataOnOff Counter</h1>
+	<div id="buttons">
+		<p>Use the buttons to increase or decrease the counter</p>
+		<div>
+			<a href="#" class="btn subtract" onclick="subtractOne();">-1</a>
+		</div>
+		<div>
+			<a href="#" class="btn add" onclick="addOne();">+1</a>
+		</div>
+		<div id="counter" class="counter">-</div>
+		<p>When online operations are sent to the server and
+			processed there, otherwise DataOnOff queues it and sends 
+			it when became online.</p>
+		<div id="server">-</div>
+		<div id="status"></div>
+	</div>
+</div>
+</body>
+</html>

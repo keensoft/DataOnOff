@@ -1,0 +1,89 @@
+
+
+body {
+	background: #222 none repeat scroll 0 0;
+	color: #666;
+	font-family: Helvetica;
+	font-size: 100%;
+	line-height: 1.5em;
+	margin: 0;
+	border-top: 1px solid #393939;
+}
+
+#stage.theme {
+	padding-top: 3px;
+	width: 306px;
+	margin: 0px auto 0 auto;
+}
+
+#stage.theme>h1 {
+	color: #eee;
+	font-size: 1.6em;
+	text-align: center;
+	margin: 0;
+	margin-top: 10px;
+	padding: 0;
+}
+
+/* Stage Buttons */
+#stage.theme a.btn {
+	border: 1px solid #555;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	display: block;
+	font-size: 2.9em;
+	background: #444;
+	width: 150px;
+	color: #9ab;
+	text-decoration: none;
+	padding: 0.4em 0;
+}
+
+#stage.theme a.subtract {
+	float: left;
+}
+
+#stage.theme a.add {
+	margin-left: 156px;
+}
+
+#buttons {
+	margin: 10px auto 0 auto;
+}
+
+#counter {
+	background: #ffa;
+	border: 1px solid #ffd324;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	clear: both;
+	margin: 5px auto 0 auto;
+	padding: 0.4em 0;
+	text-align: center;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+#server {
+	border: 1px solid #444;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	clear: both;
+	margin: 5px auto 0 auto;
+	width: 306px;
+	padding: 0.4em 0;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #9ab;
+}
+
+#status {
+	margin: 5px auto 0 auto;
+	width: 306px;
+	font-size: 1em;
+	font-weight: bold;
+	color: #9ab;
+	height: 1.0em;
+}
