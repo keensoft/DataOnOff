@@ -1,9 +1,8 @@
 DataOnOff
 ===========
 
-Introducción
+Introduction
 ------------
-Desarrollo de un framework para ayudar a desarrollar aplicaciones web con los siguientes requierimientos:
 * Mobilize existing applications
 * One development that runs on all mobile devices: iOS, Android, Blackberry and Desktop
 * Heterogeneus evironments 
@@ -54,7 +53,7 @@ Getting Started with DataOnOff
     dataOnOff = new DataOnOff(dataOnOffConfig);
   }
 ```
-* Sending an operataion to the server
+* Sending an operation to the server
 ```javascript
   dataOnOff.sendOperationToServer(JSON.stringify({
       "operation" : "add",
