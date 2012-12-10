@@ -59,7 +59,7 @@ body {
   box-sizing: border-box;
   color:#373737;
   background: #212121;
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -102,10 +102,12 @@ h6 {
 
 p {
   margin: 10px 0 15px 0;
+  text-align: justify
 }
 
 footer p {
-  color: #f2f2f2;
+  color: #000;
+  text-align: center
 }
 
 a {
@@ -147,15 +149,7 @@ img {
   position: relative;
   margin: 0 auto;
   max-width: 739px;
-  padding: 5px;
-  margin: 10px 0 10px 0;
-  border: 1px solid #ebebeb;
 
-  box-shadow: 0 0 5px #ebebeb;
-  -webkit-box-shadow: 0 0 5px #ebebeb;
-  -moz-box-shadow: 0 0 5px #ebebeb;
-  -o-box-shadow: 0 0 5px #ebebeb;
-  -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
 pre, code {
@@ -206,11 +200,13 @@ ul, ol, dl {
 ul li {
   list-style: inside;
   padding-left: 20px;
+  text-align: justify;
 }
 
 ol li {
   list-style: decimal inside;
   padding-left: 20px;
+  text-align: justify;
 }
 
 dl dt {
@@ -258,8 +254,12 @@ form {
 }
 
 img {
-  width: 100%;
-  max-width: 100%;
+/*  width: 100%; */
+   max-width: 100%;
+}
+
+b {
+	font-weight:bold;
 }
 
 /*******************************************************************************
@@ -293,12 +293,12 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
+  background: #000;
+  background: -moz-linear-gradient(top, #FFF, #FFF);
+  background: -webkit-linear-gradient(top, #FFF, #FFF);
+  background: -ms-linear-gradient(top, #FFF, #FFF);
+  background: -o-linear-gradient(top, #FFF, #FFF);
+  background: linear-gradient(top, #FFF, #FFF);
 }
 
 #header_wrap .inner {
@@ -371,10 +371,22 @@ Full-Width Styles
 }
 
 #footer_wrap {
-  background: #212121;
+  background: #FFF;
+  background: -moz-linear-gradient(top, #FFF,#FFF);
+  background: -webkit-linear-gradient(top, #FFF,#FFF );
+  background: -ms-linear-gradient(top, #FFF, #FFF);
+  background: -o-linear-gradient(top,  #FFF, #FFF);
+  background: linear-gradient(top,  #FFF, #FFF);
+  text-align: center;
 }
 
+#keen1 {
+  color:#82D2F0
+}
 
+#keen2 {
+  color:#000
+}
 
 /*******************************************************************************
 Small Device Styles

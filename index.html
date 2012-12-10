@@ -4,13 +4,24 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Dataonoff : " />
+    <meta name="description" content="DataOnOff : DataOnOff" />
+
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Dataonoff</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery.snippet.min.css">
+	
+	<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.snippet.min.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("pre.js").snippet("javascript",{style:"darkness",showNum:false});
+	});
+	
+	</script>
+	
+    <title>DataOnOff</title>
   </head>
-
 
   <body>
 
@@ -19,8 +30,10 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/keensoft/DataOnOff">View on GitHub</a>
 
-          <h1 id="project_title">Dataonoff</h1>
-          <h2 id="project_tagline"></h2>
+<!--
+          <h1 id="project_title">nubarchiva Alfresco</h1>
+-->
+          <h2 id="project_tagline"><img src="images/Doologo.png" /> </h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/keensoft/DataOnOff/zipball/master">Download this project as a .zip file</a>
@@ -32,41 +45,51 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        <h3>Introducción</h3>
+			<p>Uno de los problemas con que se enfrentan las aplicaciones informatícas y en especial las aplicaciones móviles, son los posibles fallos de conexión con los servidores. DataOnOff viene a dar soporte para sistemas con conexión intermitente online/offline. Esta funcionalidad permite al usuario trabajar en el dispositivo interactuando con una base de datos remota realizando las operaciones para las que esté destinada la aplicación independientemente de si existe en ese momento conexión con la base de datos. Para ello el terminal dispone de una copia de un fragmento de la base de datos remota. Cuando el terminal no tenga conexión, el usuario trabaja con la base de datos del terminal. Cuando recupere la conexión el terminal sincroniza las operaciones realizadas en la base de datos del terminal con la base de datos remota. Todo ello se realiza de forma transparente para el usuario.</p>
+        <br/>
+        <h3>Descripción</h3>
+			<p>DataOnOff provee la funcionalidad que permite al usuario trabajar en el terminal interactuando con datos remotos, realizando las operaciones para las que esté destinada la aplicación, independientemente de si existe en ese momento conexión o no. Para ello el terminal dispone de una copia de un fragmento de los datos remotos. Cuando el terminal no tenga conexión, el usuario trabaja con los datos del terminal. Cuando recupere la conexión el terminal sincroniza las operaciones realizadas en el terminal. Todo ello se realiza de forma transparente para el usuario.</p>
+			<p>Para la demostración del funcionamiento de DataOnOff, emplearemos un framework de desarrollo de aplicaciones móviles,
+			    con una gran extensión de uso  y construido siguiendo las directrices Open Source. <a href="http://phonegap.com/">PhoneGap</a>   permite desarrollar aplicaciones mediante Javascript, Css (Cascade Style Sheets) y
+				HTML. El API de DataOnOff es el	encargado de conectar con la base de datos remota y mediante invocaciones HTTP con el formato
+				de datos <a href="http://es.wikipedia.org/wiki/JSON">JSON</a> para sincronizar la base de datos.
+			</p>
+			<p>
+			En caso de que la conexión no sea posible se guarda la información en una base de datos local en
+			el terminal. Esta base de datos esta implementada mediante el motor <a href="http://www.sqlite.org">SQLite</a>, motor de base de
+			datos autocontenido con un uso preferencial en terminales móviles. <a href="http://www.sqlite.org">SQLite</a> es Open Source y tiene
+			una licencia <a href="http://www.sqlite.org/copyright.html">Public Domain</a>.
+			</p>
+	  
+			<p>El diagrama de estados que tiene la librería para los envíos es el siguiente:</p>  
+			<img src="images/esquema2.png">  
+			
+			<p>El esquema funcional de alto nivel del sistema es el siguiente:</p>
+			<img src="images/esquema3.png">
+			
+			<br/>
+			<h3>Contribuir</h3>
+			<p>Si quieres contribuir estas invitado a hacerlo.</p>
+			<ul>
+				<li>Clona el repositorio <i>git</i> del proyecto.</li>
+				<li>Realiza los cambios que desees aportar.</li>
+				<li>Finalmente comparte tus cambios con la comunidad utilizando GitHub.</li>
+			</ul>
+			<h3>Descargas</h3>
+			<p>Puedes descargar el proyecto y los demás recursos a través de los enlaces de la <a href="#top">parte superior de la página</a></p>
+			<h3>Licencia de uso</h3>
+			<p>DataOnOff está licenciado bajo <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a></p>
       </section>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Dataonoff maintained by <a href="https://github.com/keensoft">keensoft</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p class="copyright"><a href="http://www.keensoft.es"><img src="images/keensoft.png" style="width: 200px"></a></p>
+        <p class="copyright" style="font-size: 12px;margin-top: -30px;">Proyecto financiado por el <a href="http://www.aragon.es">Gobierno de Aragón</a> dentro del programa de apoyo al Software libre.</p>
       </footer>
+	  	
     </div>
 
     
